@@ -26,7 +26,7 @@ var MapsLib = {
 
   //MODIFY the encrypted Table IDs of your Fusion Tables (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1p3HtGOMZpCYHwwbZPLPGo6rMZ7TO8w_TYA-3wjzg", //Point data layer
+  fusionTableId:      "1oex86gJeCeuH0Cq2Sv_NjiCA_7pu-z4_1eVPtW5F", //Point data layer
   
   polygon1TableID:    "13hs2EWxA5U0hEGtvyjcuB3dXNxB8x1m8v2OYd32d", //Outline map layer of CT town boundaries
   polygon2TableID:    "1VopQGBhRKyyk25EIA5ptScvULxR68d43RhZ1ycM", //Thematic map layer of selected CT school districts
@@ -135,24 +135,15 @@ var MapsLib = {
     var whereClause = MapsLib.locationColumn + " not equal to ''";
 
   //-----custom filters for point data layer
-    //---MODIFY column header and values below to match your Google Fusion Table AND index.html
-    //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'Program Type'";  // -- note use of single & double quotes for two-word column header
-    var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Interdistrict");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("District");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("MorePreK");
-    whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
+
 
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
-    /*    var type_column = "'TypeNum'";
+        var type_column = "'TypeNum'";
     var searchType = type_column + " IN (-1,";
     if ( $("#cbType1").is(':checked')) searchType += "1,";
     if ( $("#cbType2").is(':checked')) searchType += "2,";
     if ( $("#cbType3").is(':checked')) searchType += "3,";
-    if ( $("#cbType4").is(':checked')) searchType += "4,";
-    if ( $("#cbType5").is(':checked')) searchType += "5,";
-    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";*/
+    whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
     //-------end of custom filters--------
 
     if (address != "") {
