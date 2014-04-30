@@ -28,9 +28,8 @@ var MapsLib = {
   //NOTE: numeric IDs will be depricated soon
   fusionTableId:      "1oex86gJeCeuH0Cq2Sv_NjiCA_7pu-z4_1eVPtW5F", //Point data layer
   
-  polygon1TableID:    "13hs2EWxA5U0hEGtvyjcuB3dXNxB8x1m8v2OYd32d", //Outline map layer of CT town boundaries
-  polygon2TableID:    "1VopQGBhRKyyk25EIA5ptScvULxR68d43RhZ1ycM", //Thematic map layer of selected CT school districts
-
+  polygon1TableID:    "13hs2EWxA5U0hEGtvyjcuB3dXNxB8x1m8v2OYd32d", //Census 2000 tracts with Opportunity report 2009 scores
+  
   //*MODIFY Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
   googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
@@ -81,19 +80,10 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
-    // MODIFY if needed: defines background polygon1 and polygon2 layers
+    // MODIFY if needed: defines background polygon1 layer
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
       query: {
         from:   MapsLib.polygon1TableID,
-        select: "geometry"
-      },
-      styleId: 2,
-      templateId: 2
-    });
-
-    MapsLib.polygon2 = new google.maps.FusionTablesLayer({
-      query: {
-        from:   MapsLib.polygon2TableID,
         select: "geometry"
       },
       styleId: 2,
@@ -125,10 +115,7 @@ var MapsLib = {
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
     }
-    else if ($("#rbPolygon2").is(':checked')) {
-      MapsLib.polygon2.setMap(map);
-    }
-
+    
     var address = $("#search_address").val();
     MapsLib.searchRadius = $("#search_radius").val();
 
