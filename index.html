@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
           </button>
           <!--MODIFY title of web page, and link destination if desired-->
-          <a class='navbar-brand' href='index.html'>Housing Mobility Map (Beta)</a>
+          <a class='navbar-brand' href='index.html'>Housing Mobility Map (beta)</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -38,7 +38,7 @@
       <div class='row'>
         <div class='col-md-4'>
         <!--MODIFY or erase any descriptive text or links below between the paragraph <p> tags -->
-          <p>Please enter the address of an apartment or home you are considering to find areas of higher opportunity and neighborhood assets.</br>-Incomplete data includes only Hartford info on grocery stores and early childhood facilities.</br>-Created at <a href='http://www.ctbigdebate.org/hackathon.html' target='_blank'>CT Mirror Inequality Hackathon 2014</a> for the <a href="http://www.ctoca.org" target="_blank">Open Communities Alliance</a> to assist housing mobility counselors. Learn more.</p>
+          <p><strong>Enter an apartment or home address to find areas of higher opportunity and neighborhood assets.</strong></br>-Incomplete data includes only Hartford info on grocery stores and early childhood facilities.</br>-Created at <a href='http://www.ctbigdebate.org/hackathon.html' target='_blank'>CT Mirror Inequality Hackathon 2014</a> for the <a href="http://www.ctoca.org" target="_blank">Open Communities Alliance</a> to assist housing mobility counselors. Learn more.</p>
           <div class='well'>
             <h4>
               Address <small>(<a id='find_me' href='#'>find me</a>)</small>
@@ -90,14 +90,10 @@
             <!--MODIFY Polygon layers legend heading, labels (such as Polygon layer 1) to match your data, and related variables in maps_lib.js file -->
               Census tracts
             </h4>
-            <ul class='inputs-list unstyled'>
-              <li>
-                <label class='radio inline'>
-                  <input type='radio' name='types' id='rbPolygon1' checked />
+              <label class='checkbox inline'>
+                  <input type='radio' name='types' class='hidden' id='rbPolygon1' checked /> <!--hides Polygon1 label -->
                   Higher opportunity = darker shading
-                </label>
-              </li>
-            </ul>
+              </label>
             <br />
             <a class='btn btn-primary' id='search' href='#'>
               <i class='glyphicon glyphicon-search'></i>
