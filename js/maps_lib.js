@@ -100,7 +100,8 @@ var MapsLib = {
     
     //-----custom initializers -- default setting to display Polygon1 layer
     
-    $("#rbPolygon1").attr("checked", "checked"); 
+   // $("#rbPolygon1").attr("checked", "checked"); 
+   // $(":checkbox").attr("autocomplete", "off");   //all checkboxes off by default
     
     //-----end of custom initializers-------
 
