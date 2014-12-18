@@ -96,12 +96,13 @@ var MapsLib = {
     if (loadRadius != "") $("#search_radius").val(loadRadius);
     else $("#search_radius").val(MapsLib.searchRadius);
     // $(":checkbox").prop("checked", "checked");
+    $(":checkbox").attr("autocomplete", "off");   //all checkboxes off by default
     $("#result_box").hide();
     
     //-----custom initializers -- default setting to display Polygon1 layer
     
    // $("#rbPolygon1").attr("checked", "checked"); 
-   $(":checkbox").attr("autocomplete", "off");   //all checkboxes off by default
+ 
     
     //-----end of custom initializers-------
 
